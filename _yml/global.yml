@@ -1,0 +1,77 @@
+site_title: piotrmerton
+lang: en
+
+base_url: 'index.html' # full URL to the home page of a site
+base_dir: '' # base file directory 
+base_assetsDir: '' # directory of assets/ folder
+root_assetsDir: '' # absolute path to root directory of assets/ folder 
+
+projects : 
+ - slug : eltechnika
+   desc : "Branding, design and WordPress theme development of an enterprise website for a local security company." 
+   url : 
+    live : https://el-technika.com/
+
+ - slug : softwaremill
+   desc : "Coding and front-end development based on Adobe XD files provided by the external client." 
+   url : 
+    live : https://softwaremill.com/
+    source : https://github.com/piotrmerton/softwaremill
+
+ - slug : bravomoda
+   desc : "Design and development of a PrestaShop-based ecommerce, completed with WordPress-based blog for a Polish shoe manufacturer." 
+   url : 
+    live : https://bravomoda.pl/
+
+ - slug : insito
+   desc : "Design and WordPress theme development of a multilanguage corporate website for a UK-based Polish solicitor company." 
+   url : 
+    live : https://wypadek-drogowy.uk/
+
+ - slug : thejuice
+   desc : "Coding and front-end development based on Sketch files provided by the external client." 
+   url : 
+    live : "https://j.studio/"
+    source : "https://github.com/piotrmerton/thejuice"    
+
+ - slug : knorpl
+   desc : "Design and WordPress theme development of a corporate website for a Polish manufacturing company." 
+   url : 
+    live : "https://knor.pl/"
+
+ - slug : knoreu
+   desc : "Design and development of a PrestaShop-based ecommerce solution for a Polish manufacturer of a home decoration products." 
+   url : 
+    live : "https://knor.eu/"    
+
+ - slug : fizjorestart
+   desc : "Branding, design and custom WordPress theme development of an enterprise website for a local physiotherapy office." 
+   url : 
+    live : "https://fizjorestart.pl/"  
+
+ - slug : elementus
+   desc : "Coding and front-end development based on Adobe XD files provided by the external client. Three.js animations provided by client as well." 
+   url : 
+    live : https://elementus.io/
+    source : https://github.com/piotrmerton/elementus
+
+ - slug : asromapl
+   desc : "Redesign and development of a portal-like website for a football fansite. Extensive use of Custom Post Types and Custom Taxonomies for managing competitions, matches and player data via WordPress dashboard. Integrated real time results and stats via external API." 
+   url : 
+    source : "https://github.com/piotrmerton/asrmpl-theme"
+    live : "https://asroma.pl"    
+
+ - slug : meblesadowski
+   desc : "Branding, design and WordPress theme development of an enterprise website for a local furniture manufacturer." 
+   url : 
+    live : "https://meblesadowski.pl/"
+
+ - slug : loris
+   desc : "Design and development of a PrestaShop-based ecommerce, completed with WordPress-based blog for a local erotic retailer." 
+   url : 
+    live : "https://loris.pl/"
+
+ - slug : ejka
+   desc : "Design and development of a PrestaShop-based ecommerce, completed with WordPress-based blog capable of displaying products from store directly in theme and post content." 
+   url : 
+    live : "https://ejka.pl/"    

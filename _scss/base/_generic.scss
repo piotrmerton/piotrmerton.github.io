@@ -1,0 +1,35 @@
+//default style of generic html elements
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 1em;
+    font-weight: 300;
+    color: #717171;
+    overflow-x: hidden;
+}
+
+a {
+    color: $black;
+    text-decoration: none;
+
+    @media (hover: hover) {
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+ul {
+    list-style-type: none
+}
+
+
+img {
+    width: 100%;
+    height: auto; //takes care of inline width/height attributes
+    vertical-align: bottom;
+}
+
+p {
+    line-height: 2;
+}

@@ -1,0 +1,40 @@
+h1,
+h2,
+h3,
+h4 {
+    
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    color: $black;
+
+    &:not(.header--no-margin) {
+        margin-bottom: 2rem;
+    }
+}
+
+h1 {
+    font-size: 4em;
+    max-width: 80rem;
+
+    @media (max-width: $breakpoint_mobile) {
+        font-size: 3em;
+    }
+    @media (max-width: $breakpoint_phone_big) {
+        font-size: 2em;
+    }
+
+    strong {
+        font-weight: 700;
+    }
+}
+
+h2 {
+    font-size: 3em;
+}
+
+
+p {
+    line-height: 2;
+    margin-bottom: 1rem;
+    max-width: 72rem;
+}

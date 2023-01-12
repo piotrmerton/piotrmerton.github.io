@@ -1,0 +1,29 @@
+{% extends "layout/base.twig" %}
+
+{% block body %}
+
+   
+    <section class="content__section section--text section-about">
+        <div class="section__body">
+            <div class="viewport">
+                <h1><strong>Hello, I'm Piotr.</strong> I am a web designer and developer with a focus on front-end development.</h1>
+                <p>I specialize in designing and coding corporate and e-commerce websites from start to finish for small and medium local businesses using open source software, mainly WordPress and PrestaShop.</p>
+                <p>Here you can read in detail <a href="stack.html">how I develop WordPress projects</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="content__section section-projects">
+        <div class="viewport">
+            <div class="section__title">
+                <h2>Selected work:</h2>
+            </div>
+            <ul class="projects__list">
+                {% for project in projects %}
+                    {% include 'partials/item-project.twig' %}
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+
+{% endblock %}

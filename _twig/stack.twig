@@ -1,0 +1,63 @@
+{% extends "layout/base.twig" %}
+
+{% block body %}
+
+   
+    <section class="content__section section--text">
+        <div class="section__body">
+            <div class="viewport">
+                <h1><strong>What is my techstack?</strong> Here are the details how I built WordPress websites with code examples.</h1>
+
+                <p>The purpose of this article is to introduce you with both my skills and my limits. Click <a href="index.html">here</a> to go back to projects list.</p>
+
+                <h2>1. Tooling</h2>
+                <p>I tend to keep dependencies at the minimum, but these tools are essential to my work (links are pointing to GitHub repository of <a href="https://github.com/piotrmerton/asrmpl-theme">real-life project</a> where you can review file structure and code):</p>
+            
+                <ul>
+                    <li><strong>Composer</strong> - for managing theme <a href="https://github.com/piotrmerton/asrmpl-theme/blob/main/composer.json">back-end dependencies</a> and autoloading <a href="https://github.com/piotrmerton/asrmpl-theme/tree/main/inc/classes">custom classes encapsulated in Namespaces</a>.</li>
+                    <li><strong>Timber</strong> - for separating <a href="https://github.com/piotrmerton/asrmpl-theme/tree/main/views">template markup</a> from code logic using Twig template engine.</li>
+                    <li><strong>NPM</strong> - for managing theme <a href="https://github.com/piotrmerton/asrmpl-theme/blob/main/_dev/package.json">front-end and dev dependencies</a>.</li>
+                    <li><strong>Webpack</strong> - for modern <a href="https://github.com/piotrmerton/asrmpl-theme/tree/main/_dev">theme assets</a> transpilation and optimization. </li>
+                    <li><strong>ACF</strong> - for customizing dashboard UI and UX.</li>
+                </ul>
+
+                <h2>2. Tech-stack</h2>
+
+                <ul>
+                    <li><strong>ES6</strong> syntax for <a href="https://github.com/piotrmerton/asrmpl-theme/tree/main/_dev/_js">javascript files</a> compiled by <strong>Babel</strong>.</li> 
+                    <li><strong>React</strong> for <a href="https://github.com/piotrmerton/asrmpl-theme/tree/main/_dev/_js/components">front-end components</a> that communicate with <strong>WP Rest</strong> asynchronously.</a>
+                    <li><strong>SCSS</strong> syntax with <strong>BEM</strong> methodology for <a href="https://github.com/piotrmerton/asrmpl-theme/tree/main/_dev/_scss">stylesheet files</a> processed by <strong>SASS</strong>.</li>
+                </ul>
+
+                <p>If there are no requirements I try not no rely on additional libraries or frameworks like Tailwind, Fontawesome, Bootstrap or jQuery, especially on small and medium projects to avoid bloat.</p>
+
+                <h2>3. Theme files structure</h2>
+
+                <p>To keep <strong>theme structure</strong> as clean as possible and avoid <i>spaghettification</i> of <a href="https://github.com/piotrmerton/asrmpl-theme/blob/main/functions.php">functions.php</a> file, all <a href="https://github.com/piotrmerton/asrmpl-theme/tree/main/inc">custom logic</a> (such as theme's <a href="https://github.com/piotrmerton/asrmpl-theme/blob/main/inc/theme-functions.php">functions</a>, <a href="https://github.com/piotrmerton/asrmpl-theme/blob/main/inc/theme-hooks.php">hooks</a>, <a href="https://github.com/piotrmerton/asrmpl-theme/blob/main/inc/theme-settings.php">settings</a>, <a href="https://github.com/piotrmerton/asrmpl-theme/blob/main/inc/theme-shortcodes.php">shortcodes</a>, <a href="https://github.com/piotrmerton/asrmpl-theme/blob/main/inc/theme-variables.php">global variables</a>, etc.) and <a href="https://github.com/piotrmerton/asrmpl-theme/tree/main/inc/setup">theme's setup</a> (<a href="https://github.com/piotrmerton/asrmpl-theme/blob/main/inc/setup/cpt-setup.php">Post Types</a>, <a href="https://github.com/piotrmerton/asrmpl-theme/blob/main/inc/setup/custom-taxonomies-setup.php">Taxonomies</a>, <a href="https://github.com/piotrmerton/asrmpl-theme/blob/main/inc/setup/custom-options-setup.php">Options</a>, <a href="https://github.com/piotrmerton/asrmpl-theme/blob/main/inc/setup/rest-api-setup.php">Endpoints</a>, plugin customizations i.e. <a href="https://github.com/piotrmerton/asrmpl-theme/blob/main/inc/setup/acf-setup.php">ACF</a> and <a href="https://github.com/piotrmerton/asrmpl-theme/blob/main/inc/setup/timber-setup.php">Timber</a>, etc.) is separated into <strong>individual files</strong>. This is the middle ground between introducing more elaborate theme setup system (i.e. based on autoloaded classes) and keeping things instantly understandable for other developers familiar with WordPress terminology.</p>
+
+                <h1>Examples of <strong>customization</strong>.</h1>
+
+
+                <h2>1. Custom Post Types and Custom Taxonomies</h2>
+
+                <p><a href="https://github.com/piotrmerton/asrmpl-theme/tree/main/inc/post-types">Custom Post Types</a> are the heart of most of my WordPress projects. Be it products, services, events, employees etc. - CPT are the way to go. Each Custom Post Type is registered manually for better control (without any additional plugins to avoid complexity) in a separate file. Additional code related with each registered Type is handled via custom <a href="https://github.com/piotrmerton/asrmpl-theme/tree/main/inc/classes"> Classes</a> to decouple WordPress' <i>register_post_type</i> process from any custom logic, which is my preference.</p>
+
+                <p>Custom Taxonomies' are structured similarily to CPT's: each <a href="https://github.com/piotrmerton/asrmpl-theme/tree/main/inc/taxonomies">Custom Taxonomy</a> is registered individually and manually.</p>
+
+                <h2>2. Custom Queries</h2>
+
+                <p><a href="https://github.com/piotrmerton/asrmpl-theme/blob/main/inc/setup/custom-queries.php">Customizations of Main Query</a> is handled via dedicated hooks for best performance. Different Post Types have different <i>order</i>, <i>orderby</i> and <i>posts_per_page</i> settings, and simple manipulation logic via URL parameters for Custom Taxonomies is introduced in order to allow users filter content directly in theme.</p>
+
+                <h2>3. Custom Rest Endpoints</h2>
+                
+                <p>Most of the secondary queries (i.e. related posts on Single Posts or to display some custom data as a side content) are handled asynchronously via WP Rest to reduce initial server load. This is not always necessary, but for this particular project I didn't have control over post development caching strategy and decided that it will help with optimization, especially for logged in users knowing, that most Cache plugins (like WP Super Cache) don't work well with login feature. There are separate files for both <a href="https://github.com/piotrmerton/asrmpl-theme/tree/main/inc/endpoints">custom and default endpoints</a> to either register or modify response accordingly.</p>
+
+                <h2>4. Custom Classes</h2>
+
+                <p>Most of the custom logic related to theme templates is encapsulated in <a href="https://github.com/piotrmerton/asrmpl-theme/tree/main/inc/classes">namespaced Classes</a> which are autoloaded via Composer. This is fast and easy way to extend theme functionality without the need to develop extra plugins or to clutter functions.php or template files with additional code. Each Class' name corresponds with its purpose (i.e. <a href="https://github.com/piotrmerton/asrmpl-theme/blob/main/inc/classes/Api.php">connecting with external API</a> or generating <a href="https://github.com/piotrmerton/asrmpl-theme/blob/main/inc/classes/Breadcrumbs.php">Breadcrumbs</a> data for templates) or WordPress Entity (i.e. Custom Post Type or Custom Taxonomy) thus providing clean file structure and easy way to discover custom code for other developers without the need to study hundreds of lines in functions.php file.</p>
+
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

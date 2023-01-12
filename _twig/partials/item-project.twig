@@ -1,0 +1,30 @@
+<li class="list__item item--project project--{{ project.slug }}">
+    
+    <figure>
+        <picture>
+            <img src="{{ 'assets/img/projects/' ~ project.slug }}.jpg" width="640" height="640" />
+        </picture>
+    </figure>
+
+    <p class="project__desc">{{ project.desc }}</p>
+
+    {% if project.url.live %}
+        <a class="button button--transparent" href="{{ project.url.live }}" target="_blank">
+            <span class="button__label">{{ project.slug == "loris" ? "Do not see it live" : "See it live" }}</span>
+            <figure class="button__ico ui-ico">
+                {{ source('_svg/external.svg') }}
+            </figure>                            
+        </a>
+    {% endif %}
+
+    {% if project.url.source %}
+        <a class="button button--transparent" href="{{ project.url.source }}" target="_blank">
+            <span class="button__label">See code</span>
+            <figure class="button__ico ui-ico">
+                {{ source('_svg/github.svg') }}
+            </figure>
+        </a>
+    {% endif %}
+
+
+</li>
